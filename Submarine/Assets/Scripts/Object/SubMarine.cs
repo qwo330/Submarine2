@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SubMarine : MonoBehaviour
 {
     [Header("Setting")]
     public int MaxHP = 100;
+    public int Tickdamage = 5;
+    public int TickSec = 5;
+
     public float X_Speed = 1f;
     public float Y_Speed = 1f;
     public Boundary HeightBoundary;
@@ -15,6 +16,11 @@ public class SubMarine : MonoBehaviour
 
     [HideInInspector]
     public bool Hitable = true;
+
+    void Awake()
+    {
+        GameManager.Instance.OneSecEvent += GetTickDamage;    
+    }
 
     public void Init()
     {
@@ -44,6 +50,23 @@ public class SubMarine : MonoBehaviour
         }
     }
 
+    public void GetDamage(int power)
+    {
+        HP -= power;
+        if (HP <= 0)
+        {
+            GameManager.Instance.GameOver();
+        }
+    }
+
+    void GetTickDamage(int sec)
+    {
+        if (sec % TickSec == 0)
+        {
+            GetDamage(Tickdamage);
+        }
+    }
+
 #if UNITY_EDITOR
     [Header("Only Editor")]
     [SerializeField]
@@ -51,12 +74,12 @@ public class SubMarine : MonoBehaviour
     Vector3 offset;
     float radius;
 
-    void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
-        if (offset == null)
+        //if (offset == null)
             offset = collider.offset;
 
-        if (Mathf.Approximately(radius, 0))
+        //if (Mathf.Approximately(radius, 0))
             radius = collider.radius;
 
         Gizmos.color = Color.red;

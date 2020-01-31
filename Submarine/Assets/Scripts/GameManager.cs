@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public GameState state;
-    public UnityAction<int> oneSecEvent;
+    public UnityAction<int> OneSecEvent;
     public int Time;
 
     WaitForSeconds oneSec = new WaitForSeconds(1f);
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        oneSecEvent += HardMore;
+        OneSecEvent += HardMore;
         state = GameState.Ready;
     }
 
@@ -39,29 +39,23 @@ public class GameManager : MonoBehaviour
         UI_Result.SetActive(false);
         Time = 0;
         StartCoroutine(Timer());
+
+        Player.Init();
     }
 
     public void HardMore(int sec)
     {
-
+        // todo : 시간 흐름에 따라 게임 난이도 상승
     }
 
     IEnumerator Timer()
     {
         yield return oneSec;
         Time++;
-        oneSecEvent.Invoke(Time);
+        OneSecEvent.Invoke(Time);
     }
 
-    public void CheckGameOver()
-    {
-        if (Player.HP < 0)
-        {
-            GameOver();
-        }
-    }
-
-    void GameOver()
+    public void GameOver()
     {
         state = GameState.GameOver;
         UI_Result.SetActive(true);
