@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        Instance = this;
         oneSecEvent += HardMore;
         state = GameState.Ready;
     }
