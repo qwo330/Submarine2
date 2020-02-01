@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  Offset: {x: 0, y: 0, z: -10}
+  Offset: {x: 0, y: -19.4, z: -10}
   ShakeAmount: 0.05
   ShakeTime: 0.5
 --- !u!20 &519420031
@@ -261,7 +261,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -630,6 +630,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5240698254714913455, guid: 4ff953e60a23a4b4cb7b32eaef81312a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5364556172523894841, guid: 4ff953e60a23a4b4cb7b32eaef81312a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -734,11 +739,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5240698254714913455, guid: 4ff953e60a23a4b4cb7b32eaef81312a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5003152616202701818, guid: 4ff953e60a23a4b4cb7b32eaef81312a,
         type: 3}
@@ -1133,6 +1133,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
+        type: 3}
+      propertyPath: Tickdamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
+        type: 3}
+      propertyPath: NoDamageTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
+        type: 3}
+      propertyPath: TickSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
+        type: 3}
+      propertyPath: X_Speed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
+        type: 3}
+      propertyPath: Y_Speed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6791594647357515699, guid: 7ec074d7d0736564e82f2d2176ae25f9,
         type: 3}
