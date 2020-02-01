@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3266320393698964267}
   - component: {fileID: 5462248412436462002}
   m_Layer: 0
-  m_Name: BaseMap 1
+  m_Name: BaseMap1
   m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,8 +118,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 10}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -11.610259, y: 8.082495}
-  - {x: -11.708031, y: -0.05305481}
+  - {x: -9.931244, y: 0.044688225}
+  - {x: 0.019069672, y: -0.12423992}
+  - {x: 0.008268356, y: -0.05305481}
   - {x: 22.805351, y: -0.29365826}
   - {x: 26.878586, y: -8.408845}
   - {x: 30.743134, y: -0.29576874}
@@ -140,10 +141,10 @@ EdgeCollider2D:
   - {x: 153.18689, y: -9.568418}
   - {x: 157.32913, y: -0.8634968}
   - {x: 194.56941, y: -1.0049229}
-  - {x: 199.46367, y: -1.0049238}
-  - {x: 201.1633, y: -1.047678}
-  - {x: 201.37706, y: 5.639209}
-  - {x: 201.25995, y: 7.088091}
+  - {x: 196.63263, y: -1.0049238}
+  - {x: 199.31982, y: -1.047678}
+  - {x: 199.79695, y: -1.0864811}
+  - {x: 200.01924, y: -1.0730486}
 --- !u!68 &5462248412436462002
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -160,8 +161,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: -10}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -14.599859, y: -9.700001}
-  - {x: -14.599876, y: 1.4224138}
+  - {x: -10.000128, y: 1.3219967}
+  - {x: 0.067191124, y: 1.2488394}
   - {x: 9.556629, y: 1.2666063}
   - {x: 13.902193, y: 10.738227}
   - {x: 17.703007, y: 1.3862371}
@@ -179,8 +180,8 @@ EdgeCollider2D:
   - {x: 169.65265, y: 8.762212}
   - {x: 173.28293, y: 0.28549004}
   - {x: 191.91214, y: 0.37055206}
-  - {x: 201.62816, y: 0.10616875}
-  - {x: 201.9385, y: -11.2738}
+  - {x: 199.06157, y: 0.31241226}
+  - {x: 199.9777, y: 0.29035282}
 --- !u!1 &5585478903698003342
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +258,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8164354050927428085
@@ -504,6 +505,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RepairKit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7427898381151454576, guid: e90685bf1de8eee409c9d33614d36e0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7275086583426366370, guid: e90685bf1de8eee409c9d33614d36e0d,
         type: 3}

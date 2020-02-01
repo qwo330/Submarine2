@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 3266320393698964267}
   - component: {fileID: 5462248412436462002}
   m_Layer: 0
-  m_Name: BaseMap 9
+  m_Name: BaseMap9
   m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,8 +274,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 10}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -19.672344, y: 8.523823}
-  - {x: -19.929169, y: -0.03430271}
+  - {x: -9.869119, y: 0.07293129}
+  - {x: -8.949561, y: 0.06372833}
   - {x: 14.058819, y: -0.10693073}
   - {x: 18.556797, y: -7.8572083}
   - {x: 22.617855, y: -0.19862556}
@@ -286,8 +286,8 @@ EdgeCollider2D:
   - {x: 126.56536, y: -4.090596}
   - {x: 181.14265, y: -7.086055}
   - {x: 181.61722, y: -0.88042164}
-  - {x: 219.13963, y: -0.9413214}
-  - {x: 219.33673, y: 7.196064}
+  - {x: 209.74666, y: -1.0594721}
+  - {x: 210.00284, y: -1.0744781}
 --- !u!68 &5462248412436462002
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -304,15 +304,15 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: -10}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -20.971823, y: -7.308674}
-  - {x: -20.798615, y: 1.0424805}
+  - {x: -9.924743, y: 1.08002}
+  - {x: -8.983554, y: 1.1015558}
   - {x: 38.264297, y: 0.8833227}
   - {x: 39.204956, y: 8.069291}
   - {x: 105.32266, y: 4.0820956}
   - {x: 176.04659, y: 6.6857758}
   - {x: 176.55229, y: 0.17258644}
-  - {x: 218.93024, y: -0.07551193}
-  - {x: 218.86801, y: -8.523329}
+  - {x: 209.41911, y: 0.04263878}
+  - {x: 209.94765, y: 0.10166645}
 --- !u!1 &5585478903698003342
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &4818995891947237584
