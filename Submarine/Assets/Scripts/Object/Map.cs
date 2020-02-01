@@ -8,7 +8,7 @@ public class Map : BaseObstacle
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(GameManager.Tag_Player))
         {
             //GameManager.Instance.CreateMap();
         }
@@ -16,10 +16,15 @@ public class Map : BaseObstacle
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(GameManager.Tag_Player))
         {
-            Invoke("WaitAndReturn", 3f);
+            CollisionAction();
         }
+    }
+
+    public override void CollisionAction()
+    {
+        Invoke("WaitAndReturn", 3f);
     }
 
     void WaitAndReturn()

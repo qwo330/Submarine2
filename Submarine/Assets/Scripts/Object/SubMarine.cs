@@ -22,17 +22,9 @@ public class SubMarine : MonoBehaviour
 
     void Start()
     {
-        GameManager.Instance.OneSecEvent += GetTickDamage;    
+        GameManager.Instance.OneSecEvent += GetTickDamage;
+        GameManager.Instance.RepairEvent += Repair;
     }
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("Map"))
-    //    {
-    //        ObjectPool.Instance.ReturnObject(collision.gameObject);
-    //        GameManager.Instance.CreateMap();
-    //    }
-    //}
 
     public void Init()
     {
@@ -81,30 +73,17 @@ public class SubMarine : MonoBehaviour
         }
     }
 
+    void Repair(int hp)
+    {
+        HP = Mathf.Min(HP + hp, MaxHP);
+    }
+
     IEnumerator WaitHitable()
     {
         Hitable = false;
         yield return new WaitForSeconds(NoDamageTime);
         Hitable = true;
     }
-
-    //void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    Debug.Log("@@@ In " + collision.name);
-    //    if (collision.CompareTag("Map"))
-    //    {
-    //        GameManager.Instance.CreateMap();
-    //    }
-    //}
-
-    //void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    Debug.Log("@@@ Out" + collision.name);
-    //    if (collision.CompareTag("Map"))
-    //    {
-    //        ObjectPool.Instance.ReturnObject(collision.gameObject);
-    //    }
-    //}
 
 #if UNITY_EDITOR
     [Header("Only Editor")]

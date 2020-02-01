@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseObstacle : MonoBehaviour
+public class Mine : BaseObstacle
 {
-    [Header("Setting")]
-    public int Power = 5;
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(GameManager.Tag_Player))
@@ -15,5 +12,9 @@ public abstract class BaseObstacle : MonoBehaviour
         }
     }
 
-    public abstract void CollisionAction();
+    public override void CollisionAction()
+    {
+        GameManager.Instance.HitEvent.Invoke(Power);
+        ObjectPool.Instance.ReturnObject(gameObject);
+    }
 }

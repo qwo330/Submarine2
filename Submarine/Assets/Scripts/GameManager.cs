@@ -13,6 +13,10 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+    public const string Tag_Player = "Player";
+    public const string Tag_Obstacle = "Obstacle";
+    public const string Tag_Repair = "Repair";
+
     static GameManager _instance;
     public static GameManager Instance { get; private set; }
 
@@ -29,6 +33,7 @@ public class GameManager : MonoBehaviour
     public int Level;
     public UnityAction<int> OneSecEvent;
     public UnityAction<int> HitEvent;
+    public UnityAction<int> RepairEvent;
     public int Time;
 
     WaitForSeconds oneSec = new WaitForSeconds(1f);
