@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1837798991}
-  UI_Result: {fileID: 1887680193}
+  UI_Result: {fileID: 1610356638}
   MapWidth: 192
   State: 0
   Level: 0
@@ -217,6 +217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   Offset: {x: 0, y: 0, z: -10}
+  ShakeAmount: 0.05
+  ShakeTime: 0.5
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -464,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1359467498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +547,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1610356638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5240698254714913455, guid: 4ff953e60a23a4b4cb7b32eaef81312a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6142601609355387537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1837798991 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
@@ -697,7 +705,7 @@ PrefabInstance:
     - target: {fileID: 8618453899446116797, guid: 4ff953e60a23a4b4cb7b32eaef81312a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5364556172523894841, guid: 4ff953e60a23a4b4cb7b32eaef81312a,
         type: 3}
