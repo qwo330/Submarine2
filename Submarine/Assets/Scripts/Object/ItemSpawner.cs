@@ -19,6 +19,7 @@ public class ItemSpawner : MonoBehaviour
     void LoadObject()
     {
         getObject = ObjectPool.Instance.GetObject(type.ToString());
+        getObject.transform.parent = transform.parent;
         getObject.transform.position = transform.position;
     }
 }

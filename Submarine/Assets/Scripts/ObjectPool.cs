@@ -99,6 +99,8 @@ public class ObjectPool : MonoBehaviour
     {
         if (obj.activeSelf)
             obj.SetActive(false);
+
+        transform.parent = parent;
         string name = obj.name;
         var stack = Pools[name];
         stack.Push(obj);
