@@ -13,6 +13,10 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+    public const string Tag_Player = "Player";
+    public const string Tag_Obstacle = "Obstacle";
+    public const string Tag_Repair = "Repair";
+
     static GameManager _instance;
     public static GameManager Instance { get; private set; }
 
@@ -29,6 +33,7 @@ public class GameManager : MonoBehaviour
     public int Level;
     public UnityAction<int> OneSecEvent;
     public UnityAction<int> HitEvent;
+    public UnityAction<int> RepairEvent;
     public int Time;
 
     WaitForSeconds oneSec = new WaitForSeconds(1f);
@@ -76,9 +81,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    void CheckGameover(int hp)
+    public void CheckGameover(int power)
     {
+        int hp = Player.HP;
         if (hp <= 0)
         {
             GameOver();
@@ -104,5 +109,17 @@ public class GameManager : MonoBehaviour
         go.transform.position = new Vector3(nextMapPosX, 0, 0);
         nextMapPosX += MapWidth;
 
+    }
+}
+
+public class MinSec
+{
+    public int Min;
+    public int Sec;
+
+    public void CalcTime(int sec)
+    {
+        Min = sec / 60;
+        Sec = sec % 60;
     }
 }
