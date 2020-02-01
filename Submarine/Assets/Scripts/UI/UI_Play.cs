@@ -30,7 +30,7 @@ public class UI_Play : MonoBehaviour
         MinSec ms = new MinSec();
         ms.CalcTime(time);
 
-        MinText.text = string.Format("{0}'", ms.Min);
-        SecText.text = string.Format("{0}''", ms.Sec);
+        MinText.text = string.Format("{0}'", ms.Min).PadLeft(3, '0');
+        SecText.text = string.Format("{0}''", ms.Sec).PadLeft(4, '0');
     }
 }
