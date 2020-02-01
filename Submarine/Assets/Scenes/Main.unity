@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 210825236}
   - component: {fileID: 210825237}
   - component: {fileID: 210825238}
+  - component: {fileID: 210825239}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1837798991}
   UI_Result: {fileID: 1610356638}
-  MapWidth: 192
+  MapWidth: 216
   State: 0
   Level: 0
   Time: 0
@@ -176,6 +177,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 753263275}
+--- !u!114 &210825239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210825235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95576f6c09e5d441868c91d83d54982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
