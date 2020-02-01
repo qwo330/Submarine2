@@ -51,7 +51,7 @@ public class ObjectPool : MonoBehaviour
         CreatePool(MapType.Mine.ToString());
         CreatePool(MapType.RepairKit.ToString());
 
-        for (int i = 0; i < 16; i++)
+        for (int i = 0; i < 8; i++)
         {
             string name = ((MapType)i).ToString();
             CreatePool(name, 8);

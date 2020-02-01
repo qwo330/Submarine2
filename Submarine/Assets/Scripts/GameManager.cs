@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
     {
         //int index = 0; // test용 인덱스
 
-        int index = UnityEngine.Random.Range(0, 16); // maptype 0 ~ 15 사용
+        int index = UnityEngine.Random.Range(0, 8); // maptype 0 ~ 15 사용
         string name = ((MapType)index).ToString();
 
         //Debug.Log("create  " + name);
