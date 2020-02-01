@@ -3,10 +3,22 @@ using UnityEngine;
 
 public enum MapType
 {
-    Map1 = 0,
-    Map2,
-    Map3,
-    Map4,
+    BaseMap1 = 0,
+    BaseMap2,
+    BaseMap3,
+    BaseMap4,
+    BaseMap5,
+    BaseMap6,
+    BaseMap7,
+    BaseMap8,
+    BaseMap9,
+    BaseMap10,
+    BaseMap11,
+    BaseMap12,
+    BaseMap13,
+    BaseMap14,
+    BaseMap15,
+    BaseMap16,
 
 
 
@@ -19,7 +31,7 @@ public enum MapType
 
 public class ObjectPool : MonoBehaviour
 {
-    const string path = "Prefab/Object/";
+    const string path = "Prefab/";
 
     public static ObjectPool Instance { get; private set; }
 
@@ -39,11 +51,11 @@ public class ObjectPool : MonoBehaviour
         CreatePool(MapType.Mine.ToString());
         CreatePool(MapType.RepairKit.ToString());
 
-        //CreatePool(MapType.Map1.ToString(), 50);
-        //CreatePool(MapType.Map2.ToString(), 5);
-        //CreatePool(MapType.Map3.ToString(), 5);
-        //CreatePool(MapType.Map4.ToString(), 5);
-
+        for (int i = 0; i < 16; i++)
+        {
+            string name = ((MapType)i).ToString();
+            CreatePool(name, 8);
+        }
     }
 
     public void CreatePool(string name, int count = 32)
