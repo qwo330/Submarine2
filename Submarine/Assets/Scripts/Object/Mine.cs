@@ -14,7 +14,7 @@ public class Mine : BaseObstacle
 
     public override void CollisionAction()
     {
-        GameManager.Instance.HitEvent.Invoke(Power);
+        GameManager.Instance.Player.GetDamage(Power);
         ObjectPool.Instance.ReturnObject(gameObject);
     }
 }

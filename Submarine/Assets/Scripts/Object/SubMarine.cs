@@ -23,7 +23,7 @@ public class SubMarine : MonoBehaviour
     void Start()
     {
         GameManager.Instance.OneSecEvent += GetTickDamage;
-        GameManager.Instance.RepairEvent += Repair;
+        //GameManager.Instance.RepairEvent += Repair;
     }
 
     public void Init()
@@ -56,11 +56,16 @@ public class SubMarine : MonoBehaviour
 
     public void GetDamage(int power)
     {
+
         if (Hitable)
         {
             HP -= power;
+            GameManager.Instance.HitEvent.Invoke(power);
+
+            if (HP <= 0)
+                GameManager.Instance.CheckGameover(HP);
+
             StartCoroutine(WaitHitable());
-            GameManager.Instance.HitEvent.Invoke(HP);
         }
     }
 
@@ -69,11 +74,13 @@ public class SubMarine : MonoBehaviour
         if (sec % TickSec == 0)
         {
             HP -= Tickdamage;
-            GameManager.Instance.HitEvent.Invoke(HP);
+            if (HP <= 0)
+                GameManager.Instance.CheckGameover(HP);
+
         }
     }
 
-    void Repair(int hp)
+    public void Repair(int hp)
     {
         HP = Mathf.Min(HP + hp, MaxHP);
     }

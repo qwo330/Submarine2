@@ -42,8 +42,6 @@ public class CameraMove : MonoBehaviour
 
     public void StartCameraShake(int notuse = 0)
     {
-        Debug.Log("Shake Start");
-
         shakeFlag = true;
         shaketime = ShakeTime;
     }

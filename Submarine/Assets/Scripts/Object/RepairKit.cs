@@ -11,6 +11,7 @@ public class RepairKit : MonoBehaviour
     {
         if (collision.CompareTag(GameManager.Tag_Player))
         {
+            GameManager.Instance.Player.Repair(RepairHP);
             GameManager.Instance.RepairEvent.Invoke(RepairHP);
             ObjectPool.Instance.ReturnObject(gameObject);
         }

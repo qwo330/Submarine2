@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void CheckGameover(int hp)
+    public void CheckGameover(int hp)
     {
         if (hp <= 0)
         {
