@@ -38,14 +38,14 @@ public class UI_RedEffect : MonoBehaviour
 
     public void WarningEffect()
     {
-        Debug.Log("Waring Efffecet");
+        //Debug.Log("Waring Efffecet");
 
         animator.SetBool(key_Warning, true);
     }
 
     public void WarningEffectOff()
     {
-        Debug.Log("Waring Efffecet  FINISH");
+        //Debug.Log("Waring Efffecet  FINISH");
 
         animator.SetBool(key_Warning, false);
     }

@@ -12,6 +12,7 @@ public class UI_Play : MonoBehaviour
     void Start()
     {
         GameManager.Instance.OneSecEvent += ShowTime;
+        GameManager.Instance.OneSecEvent += UpdateLife;
         GameManager.Instance.HitEvent += UpdateLife;
         GameManager.Instance.RepairEvent += UpdateLife;
 
