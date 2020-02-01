@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class touch : MonoBehaviour
 {
+    SubMarine player;
+
+    private void Start()
+    {
+        player = GameManager.Instance.Player;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -14,10 +20,12 @@ public class touch : MonoBehaviour
             if(pos.x <= Screen.width/2)
             {
                 // 플레이어 아래로
+                player.Move(Vector2.down);
             }
             if (pos.x >= Screen.width/2)
             {
                 // 플레이어 위로
+                player.Move(Vector2.up);
             }
         }
     }
