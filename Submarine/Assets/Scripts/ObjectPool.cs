@@ -1,9 +1,18 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+public enum MapType
+{
+    Map1,
+    Map2,
+    Map3,
+    Map4,
+}
+
+
 public class ObjectPool : MonoBehaviour
 {
-    const string path = "/";
+    const string path = "";
 
     public static ObjectPool Instance { get; private set; }
 
@@ -20,7 +29,11 @@ public class ObjectPool : MonoBehaviour
 
     public void Init()
     {
-        CreatePool("Mine", 100);
+        CreatePool(MapType.Map1.ToString(), 50);
+        //CreatePool(MapType.Map2.ToString(), 5);
+        //CreatePool(MapType.Map3.ToString(), 5);
+        //CreatePool(MapType.Map4.ToString(), 5);
+
     }
 
     public void CreatePool(string name, int count = 32)
@@ -39,6 +52,7 @@ public class ObjectPool : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             GameObject obj = Instantiate(prefab, parent);
+            obj.name = name;
             obj.SetActive(false);
             stack.Push(obj);
         }
