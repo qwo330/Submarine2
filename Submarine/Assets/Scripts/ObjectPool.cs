@@ -97,7 +97,8 @@ public class ObjectPool : MonoBehaviour
 
     public void ReturnObject(GameObject obj)
     {
-        obj.SetActive(false);
+        if (obj.activeSelf)
+            obj.SetActive(false);
         string name = obj.name;
         var stack = Pools[name];
         stack.Push(obj);
