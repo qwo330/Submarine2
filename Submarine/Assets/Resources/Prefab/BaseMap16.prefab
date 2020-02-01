@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 3266320393698964267}
   - component: {fileID: 5462248412436462002}
   m_Layer: 0
-  m_Name: BaseMap 16
+  m_Name: BaseMap16
   m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -9.944061, y: -1.4193916}
-  - {x: 209.54997, y: -1.5331459}
+  - {x: 199.89304, y: -1.4043875}
 --- !u!68 &5462248412436462002
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ EdgeCollider2D:
   - {x: -7.539523, y: 1.8120451}
   - {x: -4.9872327, y: 1.9131079}
   - {x: 148.55621, y: 1.7621956}
-  - {x: 209.70125, y: 1.5607185}
+  - {x: 199.91556, y: 2.0113764}
 --- !u!1 &5585478903698003342
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +300,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8976119975102233614
