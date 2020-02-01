@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class SubMarine : MonoBehaviour
 {
     [Header("Setting")]
     public int MaxHP = 100;
+    public int NoDamageTime = 1;
     public int Tickdamage = 5;
     public int TickSec = 5;
 
@@ -17,10 +20,19 @@ public class SubMarine : MonoBehaviour
     [HideInInspector]
     public bool Hitable = true;
 
-    void Awake()
+    void Start()
     {
         GameManager.Instance.OneSecEvent += GetTickDamage;    
     }
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Map"))
+    //    {
+    //        ObjectPool.Instance.ReturnObject(collision.gameObject);
+    //        GameManager.Instance.CreateMap();
+    //    }
+    //}
 
     public void Init()
     {
@@ -31,8 +43,8 @@ public class SubMarine : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.state == GameState.Play)
-            Move(Vector2.up);
+        if (GameManager.Instance.State == GameState.Play)
+            Move(Vector2.right);
     }
 
     public void Move(Vector2 Dir)
@@ -52,10 +64,11 @@ public class SubMarine : MonoBehaviour
 
     public void GetDamage(int power)
     {
-        HP -= power;
-        if (HP <= 0)
+        if (Hitable)
         {
-            GameManager.Instance.GameOver();
+            HP -= power;
+            StartCoroutine(WaitHitable());
+            GameManager.Instance.HitEvent.Invoke(HP);
         }
     }
 
@@ -63,27 +76,53 @@ public class SubMarine : MonoBehaviour
     {
         if (sec % TickSec == 0)
         {
-            GetDamage(Tickdamage);
+            HP -= Tickdamage;
+            GameManager.Instance.HitEvent.Invoke(HP);
         }
     }
+
+    IEnumerator WaitHitable()
+    {
+        Hitable = false;
+        yield return new WaitForSeconds(NoDamageTime);
+        Hitable = true;
+    }
+
+    //void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    Debug.Log("@@@ In " + collision.name);
+    //    if (collision.CompareTag("Map"))
+    //    {
+    //        GameManager.Instance.CreateMap();
+    //    }
+    //}
+
+    //void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    Debug.Log("@@@ Out" + collision.name);
+    //    if (collision.CompareTag("Map"))
+    //    {
+    //        ObjectPool.Instance.ReturnObject(collision.gameObject);
+    //    }
+    //}
 
 #if UNITY_EDITOR
     [Header("Only Editor")]
     [SerializeField]
-    CircleCollider2D collider;
+    CircleCollider2D coll;
     Vector3 offset;
     float radius;
 
     void OnDrawGizmosSelected()
     {
         //if (offset == null)
-            offset = collider.offset;
+            offset = coll.offset;
 
         //if (Mathf.Approximately(radius, 0))
-            radius = collider.radius;
+            radius = coll.radius;
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(offset, radius);    
+        Gizmos.DrawWireSphere(transform.position + offset, radius);    
     }
 #endif
 }
