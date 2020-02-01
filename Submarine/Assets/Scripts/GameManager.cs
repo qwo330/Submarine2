@@ -94,6 +94,8 @@ public class GameManager : MonoBehaviour
     {
         State = GameState.GameOver;
         UI_Result.SetActive(true);
+        rank rank = UI_Result.GetComponent<rank>();
+        rank.InScore(Time);
         //StopAllCoroutines();
     }
 
