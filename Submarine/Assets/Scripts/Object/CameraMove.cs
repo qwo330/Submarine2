@@ -40,7 +40,7 @@ public class CameraMove : MonoBehaviour
     //        CameraShake();
     //}
 
-    public void StartCameraShake(int notuse = 0)
+    public void StartCameraShake(int power)
     {
         shakeFlag = true;
         shaketime = ShakeTime;

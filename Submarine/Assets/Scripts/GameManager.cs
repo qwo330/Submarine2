@@ -81,9 +81,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    public void CheckGameover(int hp)
+    public void CheckGameover(int power)
     {
+        int hp = Player.HP;
         if (hp <= 0)
         {
             GameOver();
@@ -109,5 +109,17 @@ public class GameManager : MonoBehaviour
         go.transform.position = new Vector3(nextMapPosX, 0, 0);
         nextMapPosX += MapWidth;
 
+    }
+}
+
+public class MinSec
+{
+    public int Min;
+    public int Sec;
+
+    public void CalcTime(int sec)
+    {
+        Min = sec / 60;
+        Sec = sec % 60;
     }
 }
