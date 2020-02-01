@@ -12,6 +12,8 @@ public class SubMarine : MonoBehaviour
 
     public float X_Speed = 1f;
     public float Y_Speed = 1f;
+
+    public Vector3 StartPosition;
     public Boundary HeightBoundary;
 
     [Space(10)]
@@ -30,7 +32,7 @@ public class SubMarine : MonoBehaviour
     {
         HP = MaxHP;
         Hitable = true;
-        transform.position = Vector3.zero;
+        transform.position = StartPosition;
     }
 
     void Update()
