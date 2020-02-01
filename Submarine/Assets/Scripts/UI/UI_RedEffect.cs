@@ -18,7 +18,7 @@ public class UI_RedEffect : MonoBehaviour
         GameManager.Instance.RepairEvent += Repair;
     }
 
-    public void HitEffect(int notuse = 0)
+    public void HitEffect(int power)
     {
         animator.SetTrigger(key_Hit);
         int hp = GameManager.Instance.Player.HP;
@@ -29,7 +29,7 @@ public class UI_RedEffect : MonoBehaviour
         }
     }
 
-    public void Repair(int notuse = 0)
+    public void Repair(int power)
     {
         int hp = GameManager.Instance.Player.HP;
         if (hp > WarningHP)
