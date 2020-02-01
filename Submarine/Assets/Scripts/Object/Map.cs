@@ -10,7 +10,7 @@ public class Map : BaseObstacle
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.Instance.CreateMap();
+            //GameManager.Instance.CreateMap();
         }
     }
 

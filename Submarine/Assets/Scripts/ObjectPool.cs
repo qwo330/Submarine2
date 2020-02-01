@@ -29,7 +29,7 @@ public class ObjectPool : MonoBehaviour
 
     public void Init()
     {
-        CreatePool(MapType.Map1.ToString(), 50);
+        //CreatePool(MapType.Map1.ToString(), 50);
         //CreatePool(MapType.Map2.ToString(), 5);
         //CreatePool(MapType.Map3.ToString(), 5);
         //CreatePool(MapType.Map4.ToString(), 5);
