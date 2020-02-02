@@ -4,18 +4,18 @@ using UnityEngine;
 public enum MapType
 {
     BaseMap1 = 0,
-    BaseMap2,
+    //BaseMap2,
     BaseMap3,
     //BaseMap4,
     BaseMap5,
     BaseMap6,
     BaseMap7,
     BaseMap8,
-    BaseMap9,
-    BaseMap10,
-    BaseMap11,
-    BaseMap12,
-    BaseMap13,
+    //BaseMap9,
+    //BaseMap10,
+    //BaseMap11,
+    //BaseMap12,
+    //BaseMap13,
     BaseMap14,
     BaseMap15,
     BaseMap16,
@@ -51,7 +51,7 @@ public class ObjectPool : MonoBehaviour
         CreatePool(MapType.Mine.ToString());
         CreatePool(MapType.RepairKit.ToString());
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 9; i++)
         {
             string name = ((MapType)i).ToString();
             CreatePool(name, 8);

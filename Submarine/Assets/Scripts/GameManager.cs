@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         State = GameState.Play;
         Time = 0;
         Level = 0;
-        nextMapPosX = 0f;
+        nextMapPosX = 30f;
 
         StartCoroutine(Timer());
 
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void CreateMap()
     {
-        int index = UnityEngine.Random.Range(0, 7); // maptype 0 ~ 15 사용
+        int index = UnityEngine.Random.Range(0, 9); // maptype 0 ~ 15 사용
         string name = ((MapType)index).ToString();
 
         //Debug.Log("create  " + name);
