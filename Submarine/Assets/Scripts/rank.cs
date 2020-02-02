@@ -58,7 +58,14 @@ public class rank : MonoBehaviour
     {
         for(int i = 0; i < 10; i++)
         {
-            ScoreText[i].text = "Score : " + list[i];
+            int score = list[i];
+            MinSec ms = new MinSec();
+            ms.CalcTime(score);
+
+            string min = ms.Min.ToString().PadLeft(2, '0');
+            string sec = ms.Sec.ToString().PadLeft(2, '0');
+            string time = string.Format("{0}' {1}''", min, sec);
+            ScoreText[i].text = "Score : " + time;
         }
     }
 
