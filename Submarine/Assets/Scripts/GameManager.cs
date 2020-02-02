@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     public UnityAction<int> RepairEvent;
     public UnityAction GameOverEvent;
     public UnityAction GameStartEvent;
+
+    public UnityAction WarningEvent;
     public int Time;
 
     WaitForSeconds oneSec = new WaitForSeconds(1f);
@@ -58,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
+        ObjectPool.Instance.ReturnAllObject();
         UI_Result.SetActive(false);
 
         State = GameState.Play;
@@ -110,8 +113,6 @@ public class GameManager : MonoBehaviour
     {
         int index = UnityEngine.Random.Range(0, 8); // maptype 0 ~ 15 사용
         string name = ((MapType)index).ToString();
-
-        Debug.Log("create  " + name);
 
         GameObject go = ObjectPool.Instance.GetObject(name);
         go.transform.position = new Vector3(nextMapPosX, 0, 0);

@@ -14,6 +14,7 @@ public class UI_RedEffect : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.WarningEvent += WarningEffect;
         GameManager.Instance.GameOverEvent += WarningOff;
         GameManager.Instance.HitEvent += HitEffect;
         GameManager.Instance.RepairEvent += Repair;

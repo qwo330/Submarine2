@@ -81,6 +81,9 @@ public class SubMarine : MonoBehaviour
         {
             HP -= Tickdamage;
             //SoundManager.Instance.PlaySFX(Clip);
+            if (HP <= 5)
+                GameManager.Instance.WarningEvent.Invoke();
+
             if (HP <= 0)
                 GameManager.Instance.CheckGameover(HP);
 

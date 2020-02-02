@@ -22,7 +22,8 @@ public class MapTrigger : MonoBehaviour
 
     public void CollisionAction()
     {
-        Invoke("WaitAndReturn", 3f);
+        //Invoke("WaitAndReturn", 3f);
+        WaitAndReturn();
     }
 
     void WaitAndReturn()
