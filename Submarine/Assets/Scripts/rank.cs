@@ -56,9 +56,16 @@ public class rank : MonoBehaviour
     }
     public void Rank() // 리스트 정렬 후 역순, 10개 점수를 출력.
     {
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
-            ScoreText[i].text = "Score : " + list[i];
+            int score = list[i];
+            MinSec ms = new MinSec();
+            ms.CalcTime(score);
+
+            string min = ms.Min.ToString().PadLeft(2, '0');
+            string sec = ms.Sec.ToString().PadLeft(2, '0');
+            string time = string.Format("{0}' {1}''", min, sec);
+            ScoreText[i].text = "Score : " + time;
         }
     }
 
