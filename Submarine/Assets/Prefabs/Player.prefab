@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: f8936456cfb2b6c46bac507aea8f76ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -132,14 +132,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 100
-  NoDamageTime: 1
-  Tickdamage: 5
-  TickSec: 5
-  X_Speed: 0.5
-  Y_Speed: 1
+  NoDamageTime: 3
+  Tickdamage: 1
+  TickSec: 1
+  X_Speed: 0.3
+  Y_Speed: 0.5
+  StartPosition: {x: 0, y: -18, z: 0}
   HeightBoundary:
-    Top: 10
-    Bottom: -10
+    Top: -9.5
+    Bottom: -27
+  Clip: {fileID: 8300000, guid: 4cff9a06db5b4974da9c03288e03b22d, type: 3}
   HP: 0
   Hitable: 1
   coll: {fileID: 6791594647357515697}

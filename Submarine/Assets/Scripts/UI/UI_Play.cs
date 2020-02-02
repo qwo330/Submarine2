@@ -11,6 +11,7 @@ public class UI_Play : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.GameStartEvent += Init;
         GameManager.Instance.OneSecEvent += ShowTime;
         GameManager.Instance.OneSecEvent += UpdateLife;
         GameManager.Instance.HitEvent += UpdateLife;
@@ -18,6 +19,13 @@ public class UI_Play : MonoBehaviour
 
         player = GameManager.Instance.Player;
         maxHP = player.MaxHP;
+    }
+
+    void Init()
+    {
+        Filled.fillAmount = 1;
+        MinText.text = "00'";
+        SecText.text = "00''";
     }
 
     public void UpdateLife(int power)

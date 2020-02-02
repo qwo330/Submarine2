@@ -400,7 +400,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 248bcb8bda3a91742b80e7b41fc43aac, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1214,46 +1214,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
-        type: 3}
-      propertyPath: Tickdamage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
-        type: 3}
-      propertyPath: NoDamageTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
-        type: 3}
-      propertyPath: TickSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
-        type: 3}
-      propertyPath: X_Speed
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
-        type: 3}
-      propertyPath: Y_Speed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
-        type: 3}
-      propertyPath: StartPosition.y
-      value: -18
-      objectReference: {fileID: 0}
-    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
-        type: 3}
-      propertyPath: HeightBoundary.Bottom
-      value: -27
-      objectReference: {fileID: 0}
-    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
-        type: 3}
-      propertyPath: HeightBoundary.Top
-      value: -9.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6791594647357515699, guid: 7ec074d7d0736564e82f2d2176ae25f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1308,11 +1268,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4838997154459921805, guid: 7ec074d7d0736564e82f2d2176ae25f9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ec074d7d0736564e82f2d2176ae25f9, type: 3}

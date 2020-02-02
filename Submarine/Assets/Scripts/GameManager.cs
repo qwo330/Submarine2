@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public UnityAction<int> HitEvent;
     public UnityAction<int> RepairEvent;
     public UnityAction GameOverEvent;
+    public UnityAction GameStartEvent;
     public int Time;
 
     WaitForSeconds oneSec = new WaitForSeconds(1f);
@@ -65,7 +66,8 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(Timer());
 
-        Player.Init();
+        //Player.Init();
+        GameStartEvent.Invoke();
     }
 
     public void HardMore(int sec)

@@ -16,6 +16,8 @@ public class SubMarine : MonoBehaviour
     public Vector3 StartPosition;
     public Boundary HeightBoundary;
 
+    public AudioClip Clip;
+
     [Space(10)]
     public int HP;
 
@@ -25,6 +27,7 @@ public class SubMarine : MonoBehaviour
     void Start()
     {
         GameManager.Instance.OneSecEvent += GetTickDamage;
+        GameManager.Instance.GameStartEvent += Init;
         //GameManager.Instance.RepairEvent += Repair;
     }
 
@@ -63,6 +66,7 @@ public class SubMarine : MonoBehaviour
         {
             HP -= power;
             GameManager.Instance.HitEvent.Invoke(power);
+            SoundManager.Instance.PlaySFX(Clip);
 
             if (HP <= 0)
                 GameManager.Instance.CheckGameover(HP);
@@ -76,6 +80,7 @@ public class SubMarine : MonoBehaviour
         if (sec % TickSec == 0)
         {
             HP -= Tickdamage;
+            //SoundManager.Instance.PlaySFX(Clip);
             if (HP <= 0)
                 GameManager.Instance.CheckGameover(HP);
 
