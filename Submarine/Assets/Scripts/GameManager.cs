@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void CreateMap()
     {
-        int index = UnityEngine.Random.Range(0, 9); // maptype 0 ~ 15 사용
+        int index = UnityEngine.Random.Range(0, 8); // maptype 0 ~ 15 사용
         string name = ((MapType)index).ToString();
 
         //Debug.Log("create  " + name);
