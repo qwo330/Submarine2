@@ -1224,6 +1224,11 @@ PrefabInstance:
       propertyPath: NoDamageTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 113294456656650971, guid: 7ec074d7d0736564e82f2d2176ae25f9,
+        type: 3}
+      propertyPath: Tickdamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6791594647357515699, guid: 7ec074d7d0736564e82f2d2176ae25f9,
         type: 3}
       propertyPath: m_LocalPosition.x
