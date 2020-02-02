@@ -44,8 +44,6 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         State = GameState.Ready;
-        Level = 0;
-        nextMapPosX = 0f;
 
         OneSecEvent += HardMore;
         HitEvent += CheckGameover;
@@ -58,9 +56,13 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        State = GameState.Play;
         UI_Result.SetActive(false);
+
+        State = GameState.Play;
         Time = 0;
+        Level = 0;
+        nextMapPosX = 0f;
+
         StartCoroutine(Timer());
 
         Player.Init();
@@ -103,8 +105,6 @@ public class GameManager : MonoBehaviour
 
     public void CreateMap()
     {
-        //int index = 0; // test용 인덱스
-
         int index = UnityEngine.Random.Range(0, 7); // maptype 0 ~ 15 사용
         string name = ((MapType)index).ToString();
 
