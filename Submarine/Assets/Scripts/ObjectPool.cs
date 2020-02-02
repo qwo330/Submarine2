@@ -18,7 +18,7 @@ public enum MapType
     //BaseMap13,
     BaseMap14,
     BaseMap15,
-    BaseMap16,
+    //BaseMap16,
 
 
 
@@ -51,7 +51,7 @@ public class ObjectPool : MonoBehaviour
         CreatePool(MapType.Mine.ToString());
         CreatePool(MapType.RepairKit.ToString());
 
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 8; i++)
         {
             string name = ((MapType)i).ToString();
             CreatePool(name, 8);
