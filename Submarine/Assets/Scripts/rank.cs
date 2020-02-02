@@ -13,7 +13,9 @@ public class rank : MonoBehaviour
 
     public Text Myscore;
 
-    public Text TextMyScore;
+    //public Text TextMyScore;
+
+    public GameObject TextMyScore;
 
     //플레이어 점수 넘겨주실거라 매개변수로 받아야함 그것또한 밖에 따로 함수.
 
@@ -54,10 +56,12 @@ public class rank : MonoBehaviour
 
         if (MyScore > 0)
         {
+            TextMyScore.SetActive(true);
             Myscore.text = MyScore.ToString();
         }
         else
         {
+            TextMyScore.SetActive(false);
             Myscore.text = "";
         }
 
