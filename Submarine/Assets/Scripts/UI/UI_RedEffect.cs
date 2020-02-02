@@ -14,6 +14,7 @@ public class UI_RedEffect : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.GameOverEvent += WarningOff;
         GameManager.Instance.HitEvent += HitEffect;
         GameManager.Instance.RepairEvent += Repair;
     }
@@ -47,6 +48,11 @@ public class UI_RedEffect : MonoBehaviour
     {
         //Debug.Log("Waring Efffecet  FINISH");
 
+        animator.SetBool(key_Warning, false);
+    }
+
+    public void WarningOff()
+    {
         animator.SetBool(key_Warning, false);
     }
 }

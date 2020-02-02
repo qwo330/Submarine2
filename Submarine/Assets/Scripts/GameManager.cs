@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public UnityAction<int> OneSecEvent;
     public UnityAction<int> HitEvent;
     public UnityAction<int> RepairEvent;
+    public UnityAction GameOverEvent;
     public int Time;
 
     WaitForSeconds oneSec = new WaitForSeconds(1f);
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         State = GameState.Ready;
         Level = 0;
-        nextMapPosX = MapWidth * 0.5f;
+        nextMapPosX = 0f;
 
         OneSecEvent += HardMore;
         HitEvent += CheckGameover;
@@ -96,6 +97,7 @@ public class GameManager : MonoBehaviour
         UI_Result.SetActive(true);
         rank rank = UI_Result.GetComponent<rank>();
         rank.InScore(Time);
+        GameOverEvent.Invoke();
         //StopAllCoroutines();
     }
 
@@ -103,7 +105,7 @@ public class GameManager : MonoBehaviour
     {
         //int index = 0; // test용 인덱스
 
-        int index = UnityEngine.Random.Range(0, 8); // maptype 0 ~ 15 사용
+        int index = UnityEngine.Random.Range(0, 7); // maptype 0 ~ 15 사용
         string name = ((MapType)index).ToString();
 
         //Debug.Log("create  " + name);
