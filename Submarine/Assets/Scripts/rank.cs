@@ -17,32 +17,17 @@ public class rank : MonoBehaviour
 
     public GameObject TextMyScore;
 
-    //플레이어 점수 넘겨주실거라 매개변수로 받아야함 그것또한 밖에 따로 함수.
-
     private void Start()
     {
-        TestMethod();
-    }
-
-    void TestMethod()
-    {
-        PlayerPrefs.SetInt("Rank1", 425);
-        PlayerPrefs.SetInt("Rank2", 625);
-        PlayerPrefs.SetInt("Rank3", 465);
-        PlayerPrefs.SetInt("Rank4", 825);
-        PlayerPrefs.SetInt("Rank5", 576);
-        PlayerPrefs.SetInt("Rank6", 911);
-        PlayerPrefs.SetInt("Rank7", 464);
-        PlayerPrefs.SetInt("Rank8", 123);
-        PlayerPrefs.SetInt("Rank9", 415);
-        PlayerPrefs.SetInt("Rank10", 414);
-
         InScore(0);
     }
 
-
     public void InScore(int MyScore)  // 점수 받는 함수
     {
+        MinSec TimeScore = new MinSec();
+
+        TimeScore.CalcTime(MyScore);
+
         list.Add(MyScore);
         for (int i = 1; i <= 10; i++)
         {
@@ -57,7 +42,9 @@ public class rank : MonoBehaviour
         if (MyScore > 0)
         {
             TextMyScore.SetActive(true);
-            Myscore.text = MyScore.ToString();
+            string min = TimeScore.Min.ToString().PadLeft(2, '0');
+            string sec = TimeScore.Sec.ToString().PadLeft(2, '0');
+            Myscore.text = string.Format("{0}' {1}''", min, sec);
         }
         else
         {
@@ -93,4 +80,6 @@ public class rank : MonoBehaviour
         
         PlayerPrefs.Save();
     }
+
+
 }
