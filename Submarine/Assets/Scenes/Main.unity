@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1837798991}
   UI_Result: {fileID: 1610356638}
-  MapWidth: 216
+  MapWidth: 200
   State: 0
   Level: 0
   Time: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  Offset: {x: 0, y: -19.4, z: -10}
+  Offset: {x: 5, y: -19.4, z: -10}
   ShakeAmount: 0.05
   ShakeTime: 0.5
 --- !u!20 &519420031
@@ -285,7 +285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0.43051103, w: 0.9025853}
-  m_LocalPosition: {x: 0, y: -18, z: -10}
+  m_LocalPosition: {x: -18, y: -18, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1094680409}
@@ -1257,7 +1257,7 @@ PrefabInstance:
     - target: {fileID: 6791594647357515699, guid: 7ec074d7d0736564e82f2d2176ae25f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 6791594647357515699, guid: 7ec074d7d0736564e82f2d2176ae25f9,
         type: 3}
@@ -1308,6 +1308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838997154459921805, guid: 7ec074d7d0736564e82f2d2176ae25f9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ec074d7d0736564e82f2d2176ae25f9, type: 3}

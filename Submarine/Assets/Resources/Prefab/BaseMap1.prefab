@@ -501,11 +501,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6944188356749764075}
     m_Modifications:
-    - target: {fileID: 8883778684400904230, guid: 8c79ad2e6e7e42a46aea266b7134d005,
-        type: 3}
-      propertyPath: m_Name
-      value: MapTrigger
-      objectReference: {fileID: 0}
     - target: {fileID: 4948532945409995006, guid: 8c79ad2e6e7e42a46aea266b7134d005,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -560,6 +555,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883778684400904230, guid: 8c79ad2e6e7e42a46aea266b7134d005,
+        type: 3}
+      propertyPath: m_Name
+      value: MapTrigger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c79ad2e6e7e42a46aea266b7134d005, type: 3}
