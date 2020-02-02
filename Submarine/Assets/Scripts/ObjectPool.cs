@@ -39,6 +39,7 @@ public class ObjectPool : MonoBehaviour
     Transform parent;
 
     Dictionary<string, Stack<GameObject>> Pools = new Dictionary<string, Stack<GameObject>>();
+    public List<GameObject> LoadedObjects;
 
     void Awake()
     {
@@ -48,6 +49,7 @@ public class ObjectPool : MonoBehaviour
 
     public void Init()
     {
+        LoadedObjects = new List<GameObject>();
         CreatePool(MapType.Mine.ToString());
         CreatePool(MapType.RepairKit.ToString());
 
@@ -92,6 +94,7 @@ public class ObjectPool : MonoBehaviour
 
         GameObject obj = stack.Pop();
         obj.SetActive(true);
+        LoadedObjects.Add(obj);
         return obj;
     }
 
@@ -103,6 +106,16 @@ public class ObjectPool : MonoBehaviour
         transform.parent = parent;
         string name = obj.name;
         var stack = Pools[name];
+        LoadedObjects.Remove(obj);
         stack.Push(obj);
+    }
+
+    public void ReturnAllObject()
+    {
+        for (int i = 0; i < LoadedObjects.Count; i++)
+        {
+            var go = LoadedObjects[i];
+            ReturnObject(go);
+        }
     }
 }

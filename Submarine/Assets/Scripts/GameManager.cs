@@ -48,11 +48,12 @@ public class GameManager : MonoBehaviour
 
         OneSecEvent += HardMore;
         HitEvent += CheckGameover;
-    }  
+    }
 
     void Start()
     {
         ObjectPool.Instance.Init();
+
     }
 
     public void GameStart()
@@ -63,11 +64,11 @@ public class GameManager : MonoBehaviour
         Time = 0;
         Level = 0;
         nextMapPosX = 30f;
-
-        StartCoroutine(Timer());
+        CreateMap();
 
         //Player.Init();
         GameStartEvent.Invoke();
+        StartCoroutine(Timer());
     }
 
     public void HardMore(int sec)
@@ -82,7 +83,6 @@ public class GameManager : MonoBehaviour
             yield return oneSec;
             Time++;
             OneSecEvent.Invoke(Time);
-            CreateMap();
         }
     }
 
@@ -102,7 +102,8 @@ public class GameManager : MonoBehaviour
         rank rank = UI_Result.GetComponent<rank>();
         rank.InScore(Time);
         GameOverEvent.Invoke();
-        //StopAllCoroutines();
+        StopAllCoroutines();
+        ObjectPool.Instance.ReturnAllObject();
     }
 
     public void CreateMap()
@@ -110,12 +111,11 @@ public class GameManager : MonoBehaviour
         int index = UnityEngine.Random.Range(0, 8); // maptype 0 ~ 15 사용
         string name = ((MapType)index).ToString();
 
-        //Debug.Log("create  " + name);
+        Debug.Log("create  " + name);
 
         GameObject go = ObjectPool.Instance.GetObject(name);
         go.transform.position = new Vector3(nextMapPosX, 0, 0);
         nextMapPosX += MapWidth;
-
     }
 }
 
